@@ -16,7 +16,7 @@ public enum SwiftLint {
     @discardableResult
     public static func lint(inline: Bool = false, directory: String? = nil,
                             configFile: String? = nil, strict: Bool = false, lintAllFiles: Bool = false,
-                            swiftlintPath: String? = nil) -> [SwiftLintViolation] {
+                            swiftlintPath: String? = nil,markdownAction: (String) -> Void = markdown) -> [SwiftLintViolation] {
         return lint(danger: danger,
                     shellExecutor: shellExecutor,
                     swiftlintPath: swiftlintPath ?? SwiftLint.swiftlintDefaultPath(),
@@ -24,7 +24,8 @@ public enum SwiftLint {
                     directory: directory,
                     configFile: configFile,
                     strict: strict,
-                    lintAllFiles: lintAllFiles)
+                    lintAllFiles: lintAllFiles,
+                    markdownAction: markdownAction)
     }
 }
 

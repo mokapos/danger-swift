@@ -10,6 +10,14 @@ public struct SwiftLintViolation: Decodable {
     var severity: Severity
     var file: String
 
+    public var fileName: String {
+        "\(file.split(separator: "/").last!)"
+    }
+
+    public var violationLine: Int {
+        return line
+    }
+
     var messageText: String {
         return reason + " (`\(ruleID)`)"
     }
@@ -20,8 +28,12 @@ public struct SwiftLintViolation: Decodable {
     }
 
     public func toMarkdown() -> String {
-        let formattedFile = file.split(separator: "/").last! + ":\(line)"
+        let formattedFile = fileName + ":\(line)"
         return "\(severity.rawValue) | \(formattedFile) | \(messageText) |"
+    }
+
+    public func toComment() -> String {
+        return "**\(fileName) : \(line)** (\(ruleID))<br>\(reason)"
     }
 }
 
