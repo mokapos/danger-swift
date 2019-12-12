@@ -5,12 +5,12 @@ import PackageDescription
 // Version number can be found in Source/Danger/Danger.swift
 
 let package = Package(
-    name: "danger-swift",
+    name: "moka-danger-swift",
     products: [
-        .library(name: "Danger", type: .dynamic, targets: ["Danger"]),
-        .library(name: "DangerFixtures", type: .dynamic, targets: ["DangerFixtures"]),
-        .library(name: "DangerDeps", type: .dynamic, targets: ["Danger-Swift"]), // dev
-        .executable(name: "danger-swift", targets: ["Runner"]),
+        .library(name: "MokaDanger", type: .dynamic, targets: ["Danger"]),
+        .library(name: "MokaDangerFixtures", type: .dynamic, targets: ["DangerFixtures"]),
+        .library(name: "MokaDangerDeps", type: .dynamic, targets: ["Danger-Swift"]), // dev
+        .executable(name: "moka-danger-swift", targets: ["Runner"]),
     ],
     dependencies: [
         .package(url: "https://github.com/shibapm/Logger", from: "0.1.0"),
