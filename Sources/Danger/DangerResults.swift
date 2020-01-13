@@ -4,9 +4,9 @@ import Foundation
 
 /// The result of a warn, message, or fail.
 public struct Violation: Encodable {
-    let message: String
-    let file: String?
-    let line: Int?
+    public let message: String
+    public let file: String?
+    public let line: Int?
 
     init(message: String, file: String? = nil, line: Int? = nil) {
         self.message = message
