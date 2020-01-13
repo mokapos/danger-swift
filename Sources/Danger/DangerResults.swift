@@ -13,6 +13,10 @@ public struct Violation: Encodable {
         self.file = file
         self.line = line
     }
+
+    func getMessage() -> String{
+        return self.message
+    }
 }
 
 /// Meta information for showing in the text info
