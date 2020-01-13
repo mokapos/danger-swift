@@ -14,7 +14,7 @@ public struct Violation: Encodable {
         self.line = line
     }
 
-    func getMessage() -> String{
+    public func getMessage() -> String{
         return self.message
     }
 }
