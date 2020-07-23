@@ -60,7 +60,8 @@ public enum SwiftLint {
                             configFile: String? = nil,
                             strict: Bool = false,
                             quiet: Bool = true,
-                            swiftlintPath: String? = nil) -> [SwiftLintViolation] {
+                            swiftlintPath: String? = nil,
+                            markdownAction: (String) -> Void = markdown) -> [SwiftLintViolation] {
         lint(lintStyle: lintStyle,
              danger: danger,
              shellExecutor: shellExecutor,
@@ -68,7 +69,8 @@ public enum SwiftLint {
              inline: inline,
              configFile: configFile,
              strict: strict,
-             quiet: quiet)
+             quiet: quiet,
+             markdownAction: markdownAction)
     }
 }
 
